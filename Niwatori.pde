@@ -4,6 +4,11 @@ class Niwatori extends AbstractKoma {
     super(name, x, y, team, active);
   }
   
+  void captured(){
+    super.captured();
+    komaList.demote(this);
+  }
+  
   boolean canMove(int toX, int toY) {
     if (!board.bArea.isInThisArea(toX,toY)) return false;
 
