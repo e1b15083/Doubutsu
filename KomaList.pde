@@ -1,6 +1,13 @@
 class KomaList {
   AbstractKoma[] komaArray = new AbstractKoma[10];
 
+AbstractKoma getKomaFromPlace(int x, int y) {
+    for (AbstractKoma k : this.komaArray) {
+      if (x == k.x && y == k.y && k.kStat.active) return k;
+    }
+    return null;
+  }
+
   KomaList() {
     komaArray[0] = new Hiyoko("hiyoko", 2, 1, 0, true);
     komaArray[1] = new Hiyoko("hiyoko", 3, 1, 1, true);
